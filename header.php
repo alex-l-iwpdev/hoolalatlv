@@ -18,8 +18,16 @@
 	?>
 	<div id="qodef-page-wrapper" class="<?php echo esc_attr( eskil_get_page_wrapper_classes() ); ?>">
 		<?php
-		// Hook to include page header template
-//		do_action( 'eskil_action_page_header_template' );
+		if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) {
+			if ( eskil_elementor_display_header_footer() ) {
+				if ( did_action( 'elementor/loaded' ) && eskil_header_footer_experiment_active() ) {
+					get_template_part( 'template/elementor-header' );
+				} else {
+					// Hook to include page header template
+					do_action( 'eskil_action_page_header_template' );
+				}
+			}
+		}
 		?>
 		<div id="qodef-page-outer">
 			<?php
