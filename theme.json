@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.5/theme.json",
+	"version": "2",
+	"settings": {
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "ping",
+					"slug": "ping",
+					"fontFace": [
+						{
+							"fontFamily": "ping",
+							"fontStretch": "",
+							"fontStyle": "normal",
+							"fontWeight": "100",
+							"src": "https://hoolalatlv.ussl.co.il/wp-content/uploads/useanyfont/7880Ping.woff2"
+						}
+					],
+					"isUAF": true
+				}
+			]
+		}
+	}
+}
