@@ -42,3 +42,22 @@ function eskil_header_footer_experiment_active() {
 
 	return (bool) ( \Elementor\Plugin::$instance->experiments->is_feature_active( 'hello-theme-header-footer' ) );
 }
+
+function change_text( $translated ) {
+    // מערך של מחרוזות לשינוי
+    $translations = array(
+        'read more' => 'קראו עוד',
+        'show all' => 'הכל',
+		'load more' => 'לטעון עוד',
+		'price range' => 'טווח מחירים',
+        
+    );
+
+    // לולאה שמבצעת את ההחלפה עבור כל מחרוזת
+    foreach ( $translations as $original => $new ) {
+        $translated = str_ireplace( $original, $new, $translated );
+    }
+
+    return $translated;
+}
+add_filter( 'gettext', 'change_text' );
